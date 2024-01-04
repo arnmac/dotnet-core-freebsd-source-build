@@ -22,6 +22,7 @@ if [ ! -f $SDKZIP ]; then
 fi
 
 if [ ! -d runtime ]; then
+    echo "Git Clone Runtime"
     git clone https://github.com/dotnet/runtime.git
     git -C runtime checkout $RUNTIMETAG
 
@@ -36,6 +37,7 @@ if [ ! -d runtime ]; then
 fi
 
 if [ ! -d aspnetcore ]; then
+    echo "Git Clone ASPNetCore"
     git clone https://github.com/dotnet/aspnetcore.git
     git -C aspnetcore checkout $ASPNETCORETAG
     git -C aspnetcore submodule update --init
@@ -54,6 +56,7 @@ if [ ! -d aspnetcore ]; then
 fi
 
 if [ ! -d installer ]; then
+    echo "Git Clone Installer"
     git clone https://github.com/dotnet/installer.git
     git -C installer checkout $INSTALLERTAG
 
@@ -66,6 +69,7 @@ if [ ! -d installer ]; then
 fi
 
 if [ ! -d sdk ]; then
+    echo "Git Clone SDK"
     git clone https://github.com/dotnet/sdk
     git -C sdk checkout $SDKTAG
 
